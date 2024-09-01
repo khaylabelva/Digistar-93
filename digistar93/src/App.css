@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1F1F1F;
+  color: #FFFFFF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar Styling */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 15px 40px;
+  background-color: #1F1F1F;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-image {
+  height: 40px;
+  width: auto;
+  margin-top: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style-type: none; /* Menghapus titik di samping item */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin: 0; /* Pastikan tidak ada margin yang tidak diinginkan */
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons .btn-daftar,
+.nav-buttons .btn-masuk {
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nav-buttons .btn-daftar {
+  background-color: #FF6A00;
+  color: #FFFFFF;
+  border: none;
+}
+
+.nav-buttons .btn-masuk {
+  background-color: transparent;
+  color: #FF6A00;
+  border: 1px solid #FF6A00;
+}
+
+.nav-links a:hover,
+.nav-buttons .btn-daftar:hover,
+.nav-buttons .btn-masuk:hover {
+  opacity: 0.8;
 }
