@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
 
 /* General Reset */
 * {
@@ -13,10 +13,10 @@ body {
   color: #FFFFFF;
 }
 
-/* Navbar Styling */
+/* Navbar.js */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px 40px;
   background-color: #1F1F1F;
@@ -24,11 +24,13 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
+  font-family: 'Inter', sans-serif;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin-right: 100px;
 }
 
 .logo-image {
@@ -38,21 +40,103 @@ body {
 }
 
 .nav-links {
+  align-items: center;
   display: flex;
-  gap: 20px;
-  list-style-type: none; /* Menghapus titik di samping item */
+  gap: 30px;
+  list-style-type: none;
+  margin: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 16px;
-  margin: 0; /* Pastikan tidak ada margin yang tidak diinginkan */
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 .nav-buttons {
   display: flex;
   gap: 10px;
+  margin-left: auto;
+}
+
+.language-dropdown {
+  position: relative;
+}
+
+.btn-language {
+  background-color: transparent;
+  color: #FCFCFC;
+  border: 1px solid #FCFCFC;
+  padding: 6px 14px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  min-width: 50px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-language:hover, .btn-language.active {
+  background-color: #FF6A00;
+  color: #FFFFFF;
+  border: 1px solid #FF6A00;
+}
+
+.btn-language img.arrow {
+  width: 10px;
+  height: auto;
+}
+
+.language-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1F1F1F;
+  border: 1px solid #FCFCFC;
+  border-radius: 18px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 4px;
+  z-index: 1000;
+  width: max-content;
+}
+
+.language-options .btn-language-option {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #FCFCFC;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.language-options .btn-language-option:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #FCFCFC;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 5px;
+}
+
+.btn-language-option:hover {
+  color: #FF6A00;
 }
 
 .nav-buttons .btn-daftar,
@@ -61,22 +145,90 @@ body {
   border-radius: 15px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 .nav-buttons .btn-daftar {
   background-color: #FF6A00;
   color: #FFFFFF;
-  border: none;
+  border: 1px solid #FF6A00;
 }
 
 .nav-buttons .btn-masuk {
   background-color: transparent;
+  color: #FCFCFC;
+  border: 1px solid #FCFCFC;
+}
+
+.nav-links a:hover {
   color: #FF6A00;
+}
+
+.nav-buttons .btn-daftar:hover {
+  background-color: transparent;
+  color: #FCFCFC;
+  border: 1px solid #FCFCFC;
+}
+
+.nav-buttons .btn-masuk:hover {
+  background-color: #FF6A00;
+  color: #FFFFFF;
   border: 1px solid #FF6A00;
 }
 
-.nav-links a:hover,
-.nav-buttons .btn-daftar:hover,
-.nav-buttons .btn-masuk:hover {
-  opacity: 0.8;
+/* Home.css */
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rem;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  position: relative;
 }
+
+.home h1 {
+  font-size: 2.5rem;
+  max-width: 350px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.home p {
+  font-size: 1.1rem;
+  max-width: 550px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.btn-butuh-bantuan {
+  background-color: #FF6A00;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid #FF6A00;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 8rem;
+  right: 8rem;
+}
+
+.btn-butuh-bantuan:hover {
+  background-color: transparent;
+  border-color: #FF6A00;
+}
+
+.question-mark {
+  width: auto;
+  height: auto;
+}
+
