@@ -31,13 +31,35 @@ const Navbar = () => {
       {/* Scrolling ticker */}
       {showTicker && (
         <div className="scrolling-ticker">
-          <div className="ticker-content">
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
-            <span>Webinar xxx dengan xxx pada xxx di xxx | </span>
+          <div className="ticker-wrapper">
+            <div className="ticker-content">
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            </div>
+            <div className="ticker-content">
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            </div>
           </div>
         </div>
       )}
@@ -82,7 +104,7 @@ const Navbar = () => {
         </div>
       </nav>
     </>
-  );
+  );  
 };
 
 export default Navbar;
