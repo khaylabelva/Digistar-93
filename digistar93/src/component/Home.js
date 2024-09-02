@@ -1,5 +1,4 @@
 import React from 'react';
-
 import QuestionMark from '../assets/QuestionMark.png';
 
 const Home = () => {
