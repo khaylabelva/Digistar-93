@@ -1,4 +1,4 @@
-import React, { useRef} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import KAILogistik from '../assets/KAILogistik.png';
 import KJM from '../assets/KJM.png';
 import Koja from '../assets/Koja.png';
@@ -6,8 +6,6 @@ import POSLogistics from '../assets/POSLogistics.png';
 import McEasy from '../assets/McEasy.png';
 import NLE from '../assets/NLE.png';
 import PerkebunanNusantara from '../assets/PerkebunanNusantara.png';
-import ButtonRight from '../assets/ButtonRight.png';
-import ButtonLeft from '../assets/ButtonLeft.png';
 
 const reviews = [
   {
@@ -55,18 +53,40 @@ const reviews = [
 ];
 
 const Review = () => {
-    const carouselRef = useRef(null);
+  const carouselRef = useRef(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const carousel = carouselRef.current;
+      const scrollLeft = carousel.scrollLeft;
+      const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+
+      // Update button visibility based on scroll position
+      setIsAtStart(scrollLeft === 0);
+      setIsAtEnd(scrollLeft >= scrollWidth);
+    };
+
+    const carousel = carouselRef.current;
+    carousel.addEventListener('scroll', handleScroll);
+
+    // Initial check on component mount
+    handleScroll();
+
+    return () => carousel.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollLeft = () => {
-    const scrollWidth = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
-    const scrollAmount = scrollWidth / 5;
-    carouselRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    const carousel = carouselRef.current;
+    const scrollAmount = carousel.clientWidth / 2;
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
-    const scrollWidth = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
-    const scrollAmount = scrollWidth / 3;
-    carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    const carousel = carouselRef.current;
+    const scrollAmount = carousel.clientWidth / 2;
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
     
     const companyImages = {
@@ -84,11 +104,11 @@ const Review = () => {
         <h2>Cerita Sukses dari Mitra LOGEE</h2>
         <p>LOGEE telah menjadi bagian dari aktor logistik yang tumbuh dan berkembang dalam satu ekosistem. Kembangkan bisnis dan usaha logistik Anda bersama ribuan armada dan mitra outlet ekosistem LOGEE. Dapatkan inspirasi dari testimoni mitra kami.</p>
         <div className="carousel-container">
-          <button 
-            className="carousel-btn left-btn" 
-            onClick={scrollLeft} 
-            style={{ backgroundImage: `url(${ButtonLeft})` }}
-          />
+          {!isAtStart && (
+            <button className="carousel-btn left-btn" onClick={scrollLeft}>
+              &lt;
+            </button>
+          )}
           <div className="review-carousel" ref={carouselRef}>
             {reviews.map((review, index) => (
               <div className="review-card" key={index}>
@@ -101,14 +121,14 @@ const Review = () => {
               </div>
             ))}
           </div>
-          <button 
-            className="carousel-btn right-btn" 
-            onClick={scrollRight} 
-            style={{ backgroundImage: `url(${ButtonRight})` }}
-          />
+          {!isAtEnd && (
+            <button className="carousel-btn right-btn" onClick={scrollRight}>
+              &gt;
+            </button>
+          )}
         </div>
       </div>
     );
-};
-
-export default Review;
+  };
+  
+  export default Review;
