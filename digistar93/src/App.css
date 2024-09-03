@@ -18,10 +18,10 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 15px 40px;
-  background-color: #1F1F1F;
+  padding: 5px 40px;
+  background-color: transparent;
   position: fixed;
-  top: 35px;
+  top: 45px;
   width: 100%;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
@@ -252,6 +252,7 @@ body {
 
 .navbar.scrolled {
   top: 0;
+  background-color: #1F1F1F;
 }
 
 /* Home.css */
@@ -439,6 +440,7 @@ body {
 .review-section h2 {
   font-size: 2rem;
   max-width: 270px;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
   margin-left: 0;
   font-weight: bold;

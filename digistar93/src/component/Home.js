@@ -50,7 +50,7 @@ const Home = () => {
               type="text"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              placeholder="Ketik pesan..."
+              placeholder="Enter a message..."
               className="chatbox-input"
             />
             <button onClick={handleSendMessage} className="chatbox-send-button">➤</button>
