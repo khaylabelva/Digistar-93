@@ -8,10 +8,12 @@ const Navbar = () => {
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('ID');
   const [showTicker, setShowTicker] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setShowTicker(window.scrollY === 0);
+      setScrolled(window.scrollY > 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -29,41 +31,39 @@ const Navbar = () => {
   return (
     <>
       {/* Scrolling ticker */}
-      {showTicker && (
-        <div className="scrolling-ticker">
-          <div className="ticker-wrapper">
-            <div className="ticker-content">
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            </div>
-            <div className="ticker-content">
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-              <span> Webinar xxx dengan xxx pada xxx di xxx</span>
-              <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            </div>
+      <div className={`scrolling-ticker ${scrolled ? 'hidden' : ''}`}>
+        <div className="ticker-wrapper">
+          <div className="ticker-content">
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+          </div>
+          <div className="ticker-content">
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
+            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
           </div>
         </div>
-      )}
-      <nav className="navbar">
+      </div>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="logo">
           <img src={LogoLogee} alt="LOGEE" className="logo-image" />
         </div>

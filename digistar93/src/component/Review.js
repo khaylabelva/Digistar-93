@@ -59,13 +59,13 @@ const Review = () => {
 
   const scrollLeft = () => {
     const scrollWidth = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
-    const scrollAmount = scrollWidth / 5; // Scroll by a quarter of the total scrollable width
+    const scrollAmount = scrollWidth / 5;
     carouselRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
     const scrollWidth = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
-    const scrollAmount = scrollWidth / 3; // Scroll by a quarter of the total scrollable width
+    const scrollAmount = scrollWidth / 3;
     carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
     
