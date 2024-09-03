@@ -8,12 +8,16 @@ const Home = () => {
 
   const handleButtonClick = () => {
     setShowChat(!showChat);
+    
+    if (!showChat) {
+      setMessages([{ text: "Halo! Apakah ada yang bisa kami bantu?", sender: "admin" }]);
+    }
   };
 
   const handleSendMessage = () => {
     if (newMessage.trim() !== "") {
       setMessages([...messages, { text: newMessage, sender: "user" }]);
-      setNewMessage(""); // Clear the input field after sending
+      setNewMessage("");
     }
   };
 

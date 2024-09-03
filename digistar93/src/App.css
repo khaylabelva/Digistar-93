@@ -20,8 +20,8 @@ body {
   align-items: center;
   padding: 15px 40px;
   background-color: #1F1F1F;
-  position: fixed;
-  top: 35px;
+  position: fixed; /* Ubah dari fixed ke sticky */
+  top: 35px; /* Pastikan top 0 agar navbar menempel di atas */
   width: 100%;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
@@ -97,7 +97,7 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1F1F1F;
+  background-color: transparent;
   border: 1px solid #FCFCFC;
   border-radius: 18px;
   margin-top: 8px;
@@ -310,7 +310,7 @@ body {
   right: 2rem;
   width: 300px;
   height: 400px;
-  background-color: #E6E6E6;
+  background-color: #f8f5f5;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -339,7 +339,6 @@ body {
   padding: 0.5rem;
   border-radius: 20px;
   max-width: 50%;
-  justify-content: right;
 }
 
 .chatbox-message.user {
@@ -347,13 +346,22 @@ body {
   align-self: flex-end;
   color: white;
   max-width: 70%;
-  padding: 0.5rem;
   word-wrap: break-word;
-  text-align: right;
+  text-align: left;
   margin-left: auto;
   border-radius: 20px 20px 0 20px;
   width: fit-content;
-  display: block;
+}
+
+.chatbox-message.admin {
+  background-color: #CECECE;
+  align-self: flex-start;
+  color: black;
+  word-wrap: break-word;
+  text-align: left;
+  border-radius: 20px 20px 20px 0;
+  padding: 0.5rem;
+  max-width: 70%;
 }
 
 .chatbox-message.bot {
@@ -397,4 +405,146 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   color: white;
+}
+
+/* Review.css */
+.review-section {
+  background-color: #FF9F73;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem 3rem;
+  padding-left: 13rem;
+  color: white;
+  position: relative;
+}
+
+.review-section h2 {
+  font-size: 2rem;
+  max-width: 270px;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  font-weight: bold;
+  text-align: left;
+}
+
+.review-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: white;
+  text-align: justify;
+  max-width: 900px;
+  margin-left: 0;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 960px;
+  margin-left: -30px;
+}
+
+.review-carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.review-card img {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.review-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.review-author {
+  margin-top: 20px;
+  text-align: right;
+  justify-content: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-author .author-name,
+.review-author .author-title {
+  margin: 0;
+  text-align: right;
+  justify-content: right;
+  white-space: nowrap;
+}
+
+.review-author .author-title {
+  font-size: 14px;
+  color: #666;
+}
+
+.carousel-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #fff;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator-bullet.active {
+  background-color: #333;
 }
