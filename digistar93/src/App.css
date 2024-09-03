@@ -475,8 +475,8 @@ body {
   background-color: #fff;
   padding: 20px;
   width: 300px;
-  height: auto; /* Ubah height menjadi auto */
-  min-height: 250px; /* Tambahkan tinggi minimum */
+  height: auto;
+  min-height: 250px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
@@ -485,27 +485,30 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ini memastikan card terisi dengan baik */
+  justify-content: space-between;
 }
 
 .review-card:hover {
-  box-shadow: 0 0 30px rgba(255, 165, 0, 0.7); /* Shadow oranye dengan transparansi */
+  box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
 }
 
 .review-card img {
-  font-size: 18px;
-  margin-bottom: 14px;
-  align-self: center; /* Posisikan gambar di tengah secara horizontal */
-  max-height: 50px; /* Batasi tinggi maksimum gambar agar tidak terlalu besar */
-  object-fit: contain; /* Pastikan gambar tidak terpotong dan tetap proporsional */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 50px;
+  object-fit: scale-down;
+  display: flex;
 }
 
 .review-card p {
   font-size: 14px;
   color: #333;
-  flex-grow: 1; /* Ini membuat feedback mengisi ruang yang tersedia di antara elemen lainnya */
+  flex-grow: 1;
   display: flex;
-  align-items: center; /* Ini menengahkan teks secara vertikal */
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .review-author {
@@ -532,8 +535,8 @@ body {
 
 .carousel-btn {
   position: absolute;
-  top: 50%; /* Position the buttons vertically in the middle */
-  transform: translateY(-50%); /* Adjust for button height */
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #D9D9D9;
   color: #555;
   font-weight: 900;
@@ -551,11 +554,11 @@ body {
 }
 
 .left-btn {
-  left: -30px; /* Position the left button */
+  left: -30px;
 }
 
 .right-btn {
-  right: -30px; /* Position the right button */
+  right: -30px;
 }
 
 .carousel-btn:hover {
