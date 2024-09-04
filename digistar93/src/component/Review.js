@@ -63,7 +63,6 @@ const Review = () => {
       const scrollLeft = carousel.scrollLeft;
       const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
 
-      // Update button visibility based on scroll position
       setIsAtStart(scrollLeft === 0);
       setIsAtEnd(scrollLeft >= scrollWidth);
     };
@@ -71,7 +70,6 @@ const Review = () => {
     const carousel = carouselRef.current;
     carousel.addEventListener('scroll', handleScroll);
 
-    // Initial check on component mount
     handleScroll();
 
     return () => carousel.removeEventListener('scroll', handleScroll);
