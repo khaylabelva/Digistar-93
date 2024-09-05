@@ -5,9 +5,13 @@ import GooglePlay from '../assets/GooglePlay.png';
 import Instagram from '../assets/Instagram.png';
 import Facebook from '../assets/Facebook.png';
 import LinkedIn from '../assets/LinkedIn.png';
+import EmailIcon from '../assets/EmailIcon.png';
+import PhoneIcon from '../assets/PhoneIcon.png';
+import AddressIcon from '../assets/AddressIcon.png';
+import X from '../assets/X.png';
+import ArrowIcon from '../assets/ArrowIcon.png';
 
 const Footer = () => {
-  // Card content data
   const cards = [
     {
       title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
@@ -37,12 +41,10 @@ const Footer = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Function to handle next card
   const nextCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
   };
 
-  // Function to handle previous card
   const prevCard = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
   };
@@ -73,41 +75,53 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="footer-contact">
-          <img src={LogoLogee} alt="LOGEE logo" />
-          <p>Jembatan Digital Rantai Pasok</p>
-          <p>Email: <a href="mailto:info@logee.id">info@logee.id</a></p>
-          <p>Phone: <a href="tel:+628111255250">+62 811 1255 250</a></p>
-          <p>Address: Gedung Telkom DBT, Jln. Prof. Dr. Soepomo no. 139, Jakarta Selatan, 12810 - Indonesia</p>
+            <img src={LogoLogee} alt="LOGEE logo" />
+            <div className="footer-detail">
+            <p>
+            <img src={EmailIcon} alt="Email Icon" /><a href="mailto:info@logee.id">info@logee.id</a>
+            </p>
+            <p>
+            <img src={PhoneIcon} alt="Phone Icon" /><a href="tel:+628111255250">+62 811 1255 250</a>
+            </p>
+            <p>
+            <img src={AddressIcon} alt="Address Icon" />Gedung Telkom DBT, Jln. Prof. Dr. Soepomo no. 139, Jakarta Selatan, 12810 - Indonesia
+            </p>
+            </div>
         </div>
         <div className="footer-solutions">
-          <h3>Solusi</h3>
-          <ul>
+            <h3>Solusi</h3>
+            <ul>
             <li><a href="#">Transportasi</a></li>
             <li><a href="#">Distribusi</a></li>
             <li><a href="#">Visibility</a></li>
-          </ul>
+            </ul>
         </div>
         <div className="footer-links">
-          <h3>Tautan</h3>
-          <ul>
+            <h3>Tautan</h3>
+            <ul>
             <li><a href="#">Leap</a></li>
             <li><a href="#">Artikel</a></li>
             <li><a href="#">Karier</a></li>
             <li><a href="#">Hubungi Kami</a></li>
-          </ul>
+            </ul>
         </div>
         <div className="footer-social">
-          <a href="https://play.google.com/store"><img src={GooglePlay} alt="Google Play" /></a>
-          <a href="https://www.instagram.com"><img src={Instagram} alt="Instagram" /></a>
-          <a href="https://www.linkedin.com"><img src={LinkedIn} alt="LinkedIn" /></a>
-          <a href="https://www.facebook.com"><img src={Facebook} alt="Facebook" /></a>
-          <a href="https://www.youtube.com"><img src="/youtube-icon.png" alt="YouTube" /></a>
+            <a href="https://play.google.com/store"><img src={GooglePlay} alt="Google Play" /></a>
+            <a href="https://www.instagram.com"><img src={Instagram} alt="Instagram" /></a>
+            <a href="https://www.linkedin.com"><img src={LinkedIn} alt="LinkedIn" /></a>
+            <a href="https://www.facebook.com"><img src={Facebook} alt="Facebook" /></a>
+            <a href="https://www.youtube.com"><img src={X} alt="X" /></a>
         </div>
-      </div>
+        </div>
 
-      <div className="footer-copyright">
-        <p>&copy; 2022 LOGEE. Seluruh hak dilindungi</p>
-      </div>
+        <div className="footer-bottom-bar">
+        <div className="footer-copyright">
+            <p>&copy; 2022 LOGEE. Seluruh hak dilindungi</p>
+        </div>
+        <div className="footer-up">
+            <a href="#"><img src={ArrowIcon} alt="Back to top" /></a>
+        </div>
+        </div>
     </footer>
   );
 };
