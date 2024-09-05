@@ -704,8 +704,15 @@ body {
 }
 
 .services-section h2 {
-  margin: 50px auto -90px auto;
+  margin: 50px auto auto auto;
   font-size: 1.8rem;
+}
+
+.services-section p {
+  max-width: 55%;
+  text-align: center;
+  font-size: 15px;
+  margin: 2px auto -60px auto;
 }
 
 .service-card {
@@ -734,8 +741,15 @@ body {
 }
 
 .services-section-trans h2 {
-  margin: 50px auto -90px auto;
+  margin: 50px auto auto auto;
   font-size: 1.8rem;
+}
+
+.services-section-trans p {
+  max-width: 60%;
+  text-align: center;
+  font-size: 15px;
+  margin: 2px auto -60px auto;
 }
 
 .service-card-trans {

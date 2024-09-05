@@ -15,6 +15,7 @@ const Services = () => {
       </p>
       <div className="services-section">
         <h2>Solusi Distribusi</h2>
+        <p>LOGEE menjembatani outlet dan distributor dengan jaringan principal yang tersebar di seluruh wilayah Indonesia.</p>
         <div className="service-card">
           <img src={LogeeFulfillment} alt="Logee Fulfillment" />
           <h3>Logee Fulfillment</h3>
@@ -34,6 +35,7 @@ const Services = () => {
 
       <div className="services-section-trans">
         <h2>Solusi Transportasi</h2>
+        <p>Transformasikan cara konvensional menjadi digital dengan LOGEE, mempercepat dan mempermudah pengiriman bagi pemilik muatan dan armada, sehingga lebih praktis dan efisien.</p>
         <div className="service-card-trans">
           <img src={LogeeTruck} alt="Logee Truck" />
           <h3>Logee Truck</h3>
@@ -48,6 +50,7 @@ const Services = () => {
 
       <div className="services-section">
         <h2>Solusi Visibility</h2>
+        <p>Kemudahan dalam melacak dan mengelola informasi pengiriman barang, penyimpanan stok di gudang, barang dalam perjalanan, hingga tiba barang di lokasi akhir.</p>
         <div className="service-card">
           <img src={LogeeVisibility} alt="Logee Visibility" />
           <h3>Logee Visibility</h3>
