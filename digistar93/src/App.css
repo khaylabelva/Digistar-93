@@ -711,7 +711,7 @@ body {
   max-width: 55%;
   text-align: center;
   font-size: 15px;
-  margin: 2px auto -60px auto;
+  margin: 2px auto -75px auto;
 }
 
 .service-card {
@@ -748,7 +748,7 @@ body {
   max-width: 60%;
   text-align: center;
   font-size: 15px;
-  margin: 2px auto -60px auto;
+  margin: 2px auto -75px auto;
 }
 
 .service-card-trans {
@@ -774,4 +774,140 @@ body {
   color: #000000;
   max-width: 100%;
   margin-bottom: -70px;
+}
+
+/* Footer.js */
+.footer {
+  background-color: #fa9f9f;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  margin-bottom: 40px;
+}
+
+.footer-articles {
+  text-align: center;
+}
+
+.footer-articles h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-articles p {
+  margin-bottom: 20px;
+}
+
+.footer-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer-article-card {
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.footer-article-card h3 {
+  font-size: 16px;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.footer-article-card h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-article-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer-article-card small {
+  color: #888;
+}
+
+.arrow-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #2e0303;
+}
+
+.footer-contact {
+  max-width: 250px;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-contact img {
+  margin-bottom: 10px;
+}
+
+.footer-solutions, .footer-links {
+  max-width: 200px;
+}
+
+.footer-solutions h3, .footer-links h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-solutions ul, .footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-solutions li, .footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-solutions li a, .footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: auto;
+  height: auto;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #888;
 }
