@@ -4,6 +4,7 @@ import Navbar from './component/Navbar';
 import Home from './component/Home';
 import Review from './component/Review';
 import Benefit from './component/Benefit';
+import Services from './component/Services';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Home />
       <Review />
       <Benefit />
+      <Services />
     </div>
   );
 };
