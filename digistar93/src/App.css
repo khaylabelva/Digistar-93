@@ -677,11 +677,10 @@ body {
   max-width: 100%;
 }
 
-/* Service.css */
+/* Services.css */
 .services-container {
   background-color: #d4ba62;
   padding: 3rem 3rem;
-  text-align: left;
   color: #26272B;
   margin: 0 auto;
   display: flex;
@@ -692,49 +691,52 @@ body {
 .services-title {
   text-align: center;
   max-width: 40%;
-  margin: 40px auto 10px auto;
+  margin: 40px auto 5px auto;
   font-size: 2rem;
 }
 
 .services-description {
   font-size: 1rem;
-  margin: 1px auto 15px auto;
+  margin: 5px auto 20px auto;
   text-align: center;
   max-width: 65%;
 }
 
 .services-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem 6rem; /* Increased padding for better spacing */
+  padding: 1rem 0;
   border-bottom: 1px solid #FF6A00;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .services-section:last-child {
-  border-bottom: none; /* Removes the orange line for the last section */
+  border-bottom: none;
 }
 
 .services-subtitle {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-right: 2rem; /* Added margin for space between title and text */
+  margin-bottom: 10px;
+  width: 150px;
+  flex-shrink: 0;
 }
 
-.service-desc{
-  font-size: 100rem;
-}
-
-.services-section {
-  border-bottom: 1px solid #FF6A00;
-  width: 90%; /* Set width to control the length of the orange line */
-  margin: 0 auto; /* Center the line */
+.services-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 0 20px;
+  flex: 1;
 }
 
 .service-image {
   width: 150px;
   height: auto;
   border-radius: 10px;
+  margin-left: 20px;
 }
 
 .read-more {
@@ -746,12 +748,12 @@ body {
   .services-section {
     flex-direction: column;
     text-align: center;
-    padding: 1rem; /* Adjust padding for mobile */
+    padding: 1rem;
   }
   
   .service-image {
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-left: 0;
   }
 }
 
