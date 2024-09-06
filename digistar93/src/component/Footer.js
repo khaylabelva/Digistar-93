@@ -106,17 +106,19 @@ const Footer = () => {
             </ul>
         </div>
         <div className="footer-social">
-            <a href="https://play.google.com/store"><img src={GooglePlay} alt="Google Play" /></a>
-            <a href="https://www.instagram.com"><img src={Instagram} alt="Instagram" /></a>
-            <a href="https://www.linkedin.com"><img src={LinkedIn} alt="LinkedIn" /></a>
-            <a href="https://www.facebook.com"><img src={Facebook} alt="Facebook" /></a>
-            <a href="https://www.youtube.com"><img src={X} alt="X" /></a>
+            <a href="https://play.google.com/store/apps/developer?id=logee.id&pli=1"><img src={GooglePlay} alt="Google Play" /></a>
+            <a href="https://www.instagram.com/logee.id/"><img src={Instagram} alt="Instagram" /></a>
+            <a href="https://www.linkedin.com/company/logee-indonesia/"><img src={LinkedIn} alt="LinkedIn" /></a>
+            <a href="https://www.facebook.com/people/Logeeid/100084864591594/"><img src={Facebook} alt="Facebook" /></a>
+            <div className="footer-social-x">
+            <a href="https://x.com/logee_id"><img src={X} alt="X" /></a>
+            </div>
         </div>
         </div>
 
         <div className="footer-bottom-bar">
         <div className="footer-copyright">
-            <p>&copy; 2022 LOGEE. Seluruh hak dilindungi</p>
+            <p>Hak Cipta &copy; 2022 LOGEE. Seluruh hak dilindungi</p>
         </div>
         <div className="footer-up">
             <a href="#"><img src={ArrowIcon} alt="Back to top" /></a>
