@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Satoshi', sans-serif;
-  background-color: #1F1F1F;
+  background: linear-gradient(to bottom, #424242 1%, #FFFFFF 50%);
   color: #FFFFFF;
 }
 
@@ -265,7 +265,6 @@ body {
   padding: 2rem 3rem;
   color: white;
   position: relative;
-  background-color: #7064a5;
 }
 
 .home h1 {
@@ -425,7 +424,6 @@ body {
 
 /* Review.css */
 .review-section {
-  background-color: #FF9F73;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -567,7 +565,6 @@ body {
 
 /* Benefit.css */
 .benefit-container {
-  background-color: #aed2f3;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -679,7 +676,6 @@ body {
 
 /* Services.css */
 .services-container {
-  background-color: #d4ba62;
   padding: 3rem 3rem;
   color: #26272B;
   margin: 0 auto;
@@ -760,7 +756,7 @@ body {
 
 /* Footer.js */
 .footer {
-  background-color: #e9aeae;
+
 }
 
 .footer-top {
@@ -815,16 +811,17 @@ body {
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   max-width: 110%;
+  padding: 5px 5px 30px 0;
 }
 
 .footer-card {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
   width: 400px;
   height: auto;
   min-height: 200px;
   border-radius: 8px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   margin-right: 20px;
   flex-shrink: 0;
   scroll-snap-align: start;
@@ -832,6 +829,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateY(2px);
 }
 
 .footer-card p {

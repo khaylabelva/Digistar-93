@@ -111,6 +111,7 @@ const Footer = () => {
             &lt;
           </button>
         )}
+        
         <div className="footer-carousel" ref={carouselRef}>
           {filteredCards.map((footer, index) => (
             <div className="footer-card" key={index}>
