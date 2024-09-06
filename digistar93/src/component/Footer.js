@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../App.css';
 import LogoLogee from '../assets/LogoLogee.png';
 import GooglePlay from '../assets/GooglePlay.png';
@@ -15,64 +15,124 @@ const Footer = () => {
   const cards = [
     {
       title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
-      description: "Fasilitas logistik sangat diperlukan bagi hampir semua jenis sektor industri. Entah itu bisnis offline maupun online, keduanya sama-sama membutuhkan logistik untuk menyimpan produk jadi mereka, bahan mentah, dan lain.",
+      description: "Teknologi baru seperti AI dan IoT membawa perubahan besar dalam manajemen rantai pasok. Bisnis harus mulai beradaptasi untuk tetap kompetitif.",
       date: "02 September 2024",
       category: "Acara"
     },
     {
-      title: "Transportasi Logistik: Inovasi dan Tantangan",
-      description: "Sektor transportasi logistik menghadapi tantangan besar dalam hal efisiensi dan keberlanjutan. Inovasi baru diperlukan untuk menjawab kebutuhan industri di era modern.",
+      title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
+      description: "Teknologi baru seperti AI dan IoT membawa perubahan besar dalam manajemen rantai pasok. Bisnis harus mulai beradaptasi untuk tetap kompetitif.",
       date: "10 September 2024",
       category: "Berita"
     },
     {
-      title: "Manajemen Inventori dalam Logistik",
-      description: "Manajemen inventori adalah bagian penting dari rantai pasok. Pengelolaan yang baik akan membantu mengurangi biaya dan meningkatkan efisiensi dalam distribusi barang.",
+      title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
+      description: "Teknologi baru seperti AI dan IoT membawa perubahan besar dalam manajemen rantai pasok. Bisnis harus mulai beradaptasi untuk tetap kompetitif.",
       date: "15 September 2024",
-      category: "Artikel"
+      category: "Lainnya"
     },
     {
-      title: "Teknologi dalam Rantai Pasok",
+      title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
       description: "Teknologi baru seperti AI dan IoT membawa perubahan besar dalam manajemen rantai pasok. Bisnis harus mulai beradaptasi untuk tetap kompetitif.",
       date: "20 September 2024",
-      category: "Inovasi"
+      category: "Acara"
+    },
+    {
+      title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
+      description: "Teknologi baru seperti AI dan IoT membawa perubahan besar dalam manajemen rantai pasok. Bisnis harus mulai beradaptasi untuk tetap kompetitif.",
+      date: "20 September 2024",
+      category: "Acara"
     }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+  const [filteredCards, setFilteredCards] = useState(cards);
 
-  const nextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+  useEffect(() => {
+    const handleScroll = () => {
+      const carousel = carouselRef.current;
+      const scrollLeft = carousel.scrollLeft;
+      const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+  
+      setIsAtStart(scrollLeft === 0);
+      setIsAtEnd(scrollLeft >= scrollWidth);
+    };
+  
+    const checkIfScrollable = () => {
+      const carousel = carouselRef.current;
+      if (filteredCards.length <= 1) {
+        setIsAtStart(true);
+        setIsAtEnd(true);
+      } else {
+        handleScroll();
+      }
+    };
+  
+    const carousel = carouselRef.current;
+    carousel.addEventListener('scroll', handleScroll);
+  
+    checkIfScrollable();
+  
+    return () => carousel.removeEventListener('scroll', handleScroll);
+  }, [filteredCards]);
+
+  const scrollLeft = () => {
+    const carousel = carouselRef.current;
+    const scrollAmount = carousel.clientWidth / 2;
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
   };
 
-  const prevCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+  const scrollRight = () => {
+    const carousel = carouselRef.current;
+    const scrollAmount = carousel.clientWidth / 2;
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
+  const filterByCategory = (category) => {
+    const updatedCards = cards.filter(card => card.category.toLowerCase() === category.toLowerCase());
+    setFilteredCards(updatedCards);
   };
 
   return (
     <footer className="footer">
       <div className="footer-top">
-        <div className="footer-articles">
-          <h2>Artikel LOGEE</h2>
-          <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
-          <div className="footer-buttons">
-            <button>Acara</button>
-            <button>Berita</button>
-            <button>Lainnya</button>
-          </div>
-          <div className="footer-carousel">
-            <button className="arrow-btn" onClick={prevCard}>&lt;</button>
-            <div className="footer-article-card">
-              <h3>{cards[currentIndex].category}</h3>
-              <h4>{cards[currentIndex].title}</h4>
-              <p>{cards[currentIndex].description}</p>
-              <small>{cards[currentIndex].date}</small>
-            </div>
-            <button className="arrow-btn" onClick={nextCard}>&gt;</button>
-          </div>
-        </div>
+      <h2>Artikel LOGEE</h2>
+      <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
+      <div className="footer-buttons">
+        <button className="footer-button" onClick={() => filterByCategory('Acara')}>Acara</button>
+        <button className="footer-button" onClick={() => filterByCategory('Berita')}>Berita</button>
+        <button className="footer-button" onClick={() => filterByCategory('Lainnya')}>Lainnya</button>
       </div>
-
+      <div className="carousel-container">
+        {!isAtStart && (
+          <button className="carousel-btn left-btn" onClick={scrollLeft}>
+            &lt;
+          </button>
+        )}
+        <div className="footer-carousel" ref={carouselRef}>
+          {filteredCards.map((footer, index) => (
+            <div className="footer-card" key={index}>
+              <div className={`footer-category ${footer.category.toLowerCase()}`}>
+                <p>{footer.category}</p>
+              </div>
+              <p><strong>{footer.title}</strong></p>
+              <p>{footer.description}</p>
+              <div className="footer-date">
+                <p>{footer.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        {!isAtEnd && (
+          <button className="carousel-btn right-btn" onClick={scrollRight}>
+            &gt;
+          </button>
+        )}
+        </div>
+      <button className="footer-main-button">Selengkapnya</button>
+    </div>
       <div className="footer-bottom">
         <div className="footer-contact">
             <img src={LogoLogee} alt="LOGEE logo" />
