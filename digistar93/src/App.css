@@ -599,7 +599,6 @@ body {
 }
 
 .benefit-card {
-  background-color: #ffffff;
   padding: 1rem;
   border-radius: 11px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -610,6 +609,7 @@ body {
   grid-column: 1 / span 2;
   width: 100%;
   height: 115px;
+  background-color: #FFDCCC;
 }
 
 .card-two {
@@ -618,6 +618,7 @@ body {
   height: 310px;
   align-self: start;
   transform: translateY(-130px);
+  background-color: #FFEEE6;
 }
 
 .card-three {
@@ -627,6 +628,7 @@ body {
   height: 185px;
   align-self: start;
   transform: translateY(-130px);
+  background-color: #FFEEE6;
 }
 
 .card-four {
@@ -636,6 +638,7 @@ body {
   height: 185px;
   align-self: start;
   transform: translateY(-130px);
+  background-color: #FFDCCC;
 }
 
 .benefit-card h3 {
@@ -654,7 +657,6 @@ body {
 
 
 .benefit-card {
-  background-color: #ffffff;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
