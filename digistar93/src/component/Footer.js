@@ -105,7 +105,7 @@ const Footer = () => {
         <button className="footer-button" onClick={() => filterByCategory('Berita')}>Berita</button>
         <button className="footer-button" onClick={() => filterByCategory('Lainnya')}>Lainnya</button>
       </div>
-      <div className="carousel-container">
+      <div className="carousel-container-footer">
         {!isAtStart && (
           <button className="carousel-btn left-btn" onClick={scrollLeft}>
             &lt;

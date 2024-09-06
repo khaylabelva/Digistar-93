@@ -466,6 +466,8 @@ body {
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   max-width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .review-card {
@@ -800,6 +802,14 @@ body {
   color: white;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
+}
+
+.carousel-container-footer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 990px;
+  margin-left: -10px;
 }
 
 .footer-carousel {
