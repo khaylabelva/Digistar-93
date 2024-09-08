@@ -346,28 +346,35 @@ body {
   right: 2rem;
   width: 300px;
   height: 400px;
-  background-color: #f8f5f5;
+  background-color: white;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border: 2px solid #FF6A00;
   z-index: 1000;
 }
 
 .chatbox-header {
-  background-color: #4A4A4A;
-  color: white;
+  background-color: white;
+  color: #FF6A00;
+  font-weight: 700;
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 4px solid #e9e8e8;
+}
+
+.chatbox-header span {
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+  font-size: 18px;
 }
 
 .chatbox-messages {
   flex-grow: 1;
-  padding: 0.5rem;
+  padding: 1rem;
   overflow-y: auto;
 }
 
@@ -391,7 +398,7 @@ body {
 }
 
 .chatbox-message.admin {
-  background-color: #CECECE;
+  background-color: #e9e8e8;
   align-self: flex-start;
   color: black;
   word-wrap: break-word;
@@ -409,16 +416,20 @@ body {
 
 .chatbox-input-container {
   display: flex;
-  padding: 0.5rem;
-  background-color: #F9F9F9;
+  padding: 1rem;
+  background-color: white;
 }
 
 .chatbox-input {
   flex-grow: 1;
-  padding: 0.5rem;
-  border: 1px solid #FF6A00;
+  padding: 0.7rem;
+  background: linear-gradient(to bottom, #cccbcb 1%, #ecebeb 30%);
   border-radius: 20px;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
 .chatbox-send-button {
@@ -441,7 +452,9 @@ body {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: white;
+  color: rgb(180, 171, 171);
+  margin-right: 1rem;
+  margin-top: 0.3rem;
 }
 
 /* Review.css */

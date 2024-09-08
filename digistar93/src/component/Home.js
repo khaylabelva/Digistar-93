@@ -35,7 +35,7 @@ const Home = () => {
       {showChat && (
         <div className="chatbox">
           <div className="chatbox-header">
-            <span>Admin BOT Logee</span>
+            <span>Mimin Logee</span>
             <button className="close-chatbox" onClick={handleButtonClick}>✖</button>
           </div>
           <div className="chatbox-messages">
