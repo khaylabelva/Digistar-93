@@ -702,14 +702,23 @@ body {
   max-width: 65%;
 }
 
+.services-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(37, 34, 34, 0.1);
+  width: 75%;
+  margin: auto auto;
+  transition: box-shadow 0.3s ease;
+}
+
 .services-section {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 0;
   border-bottom: 1px solid #FF6A00;
-  width: 70%;
-  margin: 0 auto;
+  width: 95%;
+  margin: auto 20px auto 20px;
   align-items: center;
 }
 
