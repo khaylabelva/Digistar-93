@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Satoshi', sans-serif;
-  background: linear-gradient(to bottom, #424242 1%, #FFFFFF 50%);
+  background: linear-gradient(to bottom, #424242 20%, #FFFFFF 40%);
   color: #FFFFFF;
 }
 
@@ -265,6 +265,28 @@ body {
   padding: 2rem 3rem;
   color: white;
   position: relative;
+  background-color: #424242;
+  overflow: hidden;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/HomeBackground.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.09;
+  z-index: 0;
+}
+
+.home h1,
+.home p {
+  position: relative;
+  z-index: 1;
 }
 
 .home h1 {
