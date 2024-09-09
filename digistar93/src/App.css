@@ -731,10 +731,10 @@ body {
 }
 
 .services-description {
-  font-size: 1rem;
+  font-size: 15px;
   margin: 5px auto 20px auto;
   text-align: center;
-  max-width: 65%;
+  max-width: 55%;
 }
 
 .services-card {
@@ -742,7 +742,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(37, 34, 34, 0.1);
   width: 75%;
-  margin: auto auto;
+  margin: 20px auto;
   transition: box-shadow 0.3s ease;
 }
 
