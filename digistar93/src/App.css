@@ -606,7 +606,7 @@ body {
   flex-direction: column;
   height: 100vh;
   padding: 3rem 3rem;
-  color: black;
+  color: #26272B;
   position: relative;
   overflow: hidden;
 }
@@ -1035,8 +1035,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 3rem 3rem;
-  color: black;
+  padding: 1rem 3rem;
+  color: #26272B;
   position: relative;
   overflow: hidden;
 }
@@ -1092,4 +1092,64 @@ body {
 .stat-card p {
   text-align: center;
   color: #666;
+}
+
+/* Partners.css */
+.partners-container {
+  text-align: center;
+  padding: 50px 20px;
+  color: #26272B;
+}
+
+.partners-container h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.ticker-container {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 90px auto;
+  position: relative;
+  width: 80%;
+}
+
+.ticker {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-logo {
+  display: inline-block;
+  margin: 0 70px;
+  height: auto;
+  width: auto;
+}
+
+.ticker-inner {
+  display: inline-flex;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.contact-button {
+  background-color: #FF6A00;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #e65a00;
 }
