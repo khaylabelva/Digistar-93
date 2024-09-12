@@ -621,7 +621,7 @@ body {
 .benefit-container p {
   text-align: center;
   max-width: 49%;
-  margin: 1px auto 1px auto;
+  margin: 1px auto 15px auto;
   font-size: 15px;
 }
 
@@ -633,85 +633,117 @@ body {
   justify-content: center;
 }
 
-.benefit-card {
-  padding: 1rem;
-  border-radius: 11px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-}
-
+/* Card One */
 .card-one {
   grid-column: 1 / span 2;
   width: 100%;
-  height: 145px;
+  height: 155px;
   background-color: #FFDCCC;
   margin-top: 25px;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.card-one h3 {
+  margin-bottom: 5rem;
+  margin-right: -2rem;
+  font-size: 1.25rem;
+  text-align: left;
+  color: #26272B;
+  z-index: 1;
+}
+
+.card-one img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-bottom: -31px;
+  margin-left: 0px;
+  z-index: 0;
+}
+
+/* Card Two */
 .card-two {
   grid-row: 2 / 4;
   width: 300px;
-  height: 350px;
+  height: 330px;
   align-self: start;
-  transform: translateY(-160px);
+  transform: translateY(-170px);
   background-color: #FFEEE6;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.card-two h3 {
+  margin-bottom: 13rem;
+  margin-right: -7rem;
+  font-size: 1.25rem;
+  text-align: left;
+  color: #26272B;
+  z-index: 1;
+}
+
+.card-two img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin-bottom: -62px;
+  margin-left: 30px;
+  z-index: 0;
+}
+
+/* Card Three */
 .card-three {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   width: 200px;
-  height: 190px;
+  height: 160px;
   align-self: start;
-  transform: translateY(-160px);
+  transform: translateY(-170px);
   background-color: #FFEEE6;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.card-three img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Card Four */
 .card-four {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   width: 200px;
-  height: 190px;
+  height: 160px;
   align-self: start;
-  transform: translateY(-160px);
+  transform: translateY(-170px);
   background-color: #FFDCCC;
-}
-
-.benefit-card h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.25rem;
-  text-align: left;
-  color: #26272B;
-}
-
-.benefit-card p {
-  font-size: 0.850rem;
-  color: #777;
-  text-align: justify;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.benefit-card {
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.benefit-card h3 {
-  margin-bottom: 0.3rem;
-  font-size: 1.25rem;
-  text-align: left;
-}
-
-.benefit-card p {
-  font-size: 0.850rem;
-  color: #777;
-  text-align: justify;
-  margin-left: 0;
-  padding-left: 0;
+.card-four img {
   max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* Services.css */
