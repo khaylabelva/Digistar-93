@@ -718,10 +718,23 @@ body {
   align-items: center;
 }
 
+.card-three h3 {
+  margin-bottom: 5rem;
+  margin-right: -10rem;
+  font-size: 1.25rem;
+  text-align: left;
+  color: #26272B;
+  z-index: 1;
+}
+
 .card-three img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 115%;
+  max-height: 115%;
   object-fit: contain;
+  margin-bottom: -40px;
+  margin-left: 30px;
+  margin-right: -16px;
+  z-index: 0;
 }
 
 /* Card Four */
