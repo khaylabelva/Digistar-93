@@ -13,7 +13,7 @@ body {
   color: #FFFFFF;
 }
 
-/* Navbar.js */
+/* Navbar.css */
 .navbar {
   display: flex;
   justify-content: flex-start;
@@ -858,7 +858,7 @@ body {
   }
 }
 
-/* Footer.js */
+/* Footer.css */
 .footer-top {
   text-align: left;
   padding: 100px 11rem;
@@ -965,11 +965,18 @@ body {
   color: white;
   padding: 10px 30px;
   border-radius: 25px;
-  border: none;
+  border: 1px solid #FF6A00;
   font-size: 15px;
   cursor: pointer;
   display: block;
   margin: 30px auto -50px;
+  transition: background-color 0.2s ease;
+}
+
+.footer-main-button:hover {
+  background-color: transparent;
+  color: #FF6A00;
+  border: 1px solid #FF6A00;
 }
 
 .footer-category {
@@ -1038,6 +1045,11 @@ body {
   text-decoration: none;
 }
 
+.footer-solutions li a:hover, .footer-links li a:hover {
+  color: #FF6A00;
+  text-decoration: none;
+}
+
 .footer-social {
   display: flex;
   justify-content: center;
@@ -1084,9 +1096,15 @@ body {
   width: 40px;
   height: 40px;
   margin-top: -50px;
+  border-radius: 60%;
+  transition: box-shadow 0.2s ease-in-out;
 }
 
-/* Growth.js */
+.footer-up a img:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Growth.css */
 .section-container {
   display: flex;
   flex-direction: column;
@@ -1198,14 +1216,16 @@ body {
 .contact-button {
   background-color: #FF6A00;
   color: white;
-  border: none;
+  border: 1px solid #FF6A00;
   border-radius: 25px;
   padding: 10px 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .contact-button:hover {
-  background-color: #e65a00;
+  background-color: transparent;
+  color: #FF6A00;
+  border: 1px solid #FF6A00;
 }
