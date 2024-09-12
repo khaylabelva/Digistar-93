@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import card1 from '../assets/card1.png';  // Adjust the path to where your images are stored
+import card1 from '../assets/card1.png';
 import card2 from '../assets/card2.png';
 import card3 from '../assets/card3.png';
 import card4 from '../assets/card4.png';
