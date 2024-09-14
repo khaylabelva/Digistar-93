@@ -12,6 +12,7 @@ import X from '../assets/X.png';
 import ArrowIcon from '../assets/ArrowIcon.png';
 
 const Footer = () => {
+  const [activeCategory, setActiveCategory] = useState(null);
   const cards = [
     {
       title: "Fasilitas Logistik: Pengertian dan Jenis-Jenisnya",
@@ -93,47 +94,69 @@ const Footer = () => {
   const filterByCategory = (category) => {
     const updatedCards = cards.filter(card => card.category.toLowerCase() === category.toLowerCase());
     setFilteredCards(updatedCards);
+    setActiveCategory(category);
+  };
+
+  const clearFilter = (e) => {
+    e.stopPropagation();
+    setFilteredCards(cards);
+    setActiveCategory(null);
   };
 
   return (
     <footer className="footer">
       <div className="footer-top">
-      <h2>Artikel LOGEE</h2>
-      <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
-      <div className="footer-buttons">
-        <button className="footer-button" onClick={() => filterByCategory('Acara')}>Acara</button>
-        <button className="footer-button" onClick={() => filterByCategory('Berita')}>Berita</button>
-        <button className="footer-button" onClick={() => filterByCategory('Lainnya')}>Lainnya</button>
+        <h2>Artikel LOGEE</h2>
+        <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
+        <div className="footer-buttons">
+          <button className="footer-button" onClick={() => filterByCategory('Acara')}>
+            Acara
+            {activeCategory === 'Acara' && (
+              <span className="clear-button" onClick={clearFilter}>✖</span>
+            )}
+          </button>
+          <button className="footer-button" onClick={() => filterByCategory('Berita')}>
+            Berita
+            {activeCategory === 'Berita' && (
+              <span className="clear-button" onClick={clearFilter}>✖</span>
+            )}
+          </button>
+          <button className="footer-button" onClick={() => filterByCategory('Lainnya')}>
+            Lainnya
+            {activeCategory === 'Lainnya' && (
+              <span className="clear-button" onClick={clearFilter}>✖</span>
+            )}
+          </button>
+        </div>
+        <div className="carousel-container-footer">
+          {!isAtStart && (
+            <button className="carousel-btn left-btn" onClick={scrollLeft}>
+              &lt;
+            </button>
+          )}
+          
+          <div className="footer-carousel" ref={carouselRef}>
+            {filteredCards.map((footer, index) => (
+              <div className="footer-card" key={index}>
+                <div className={`footer-category ${footer.category.toLowerCase()}`}>
+                  <p>{footer.category}</p>
+                </div>
+                <p><strong>{footer.title}</strong></p>
+                <p>{footer.description}</p>
+                <div className="footer-date">
+                  <p>{footer.date}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          {!isAtEnd && (
+            <button className="carousel-btn right-btn" onClick={scrollRight}>
+              &gt;
+            </button>
+          )}
+        </div>
+        <button className="footer-main-button">Selengkapnya</button>
       </div>
-      <div className="carousel-container-footer">
-        {!isAtStart && (
-          <button className="carousel-btn left-btn" onClick={scrollLeft}>
-            &lt;
-          </button>
-        )}
-        
-        <div className="footer-carousel" ref={carouselRef}>
-          {filteredCards.map((footer, index) => (
-            <div className="footer-card" key={index}>
-              <div className={`footer-category ${footer.category.toLowerCase()}`}>
-                <p>{footer.category}</p>
-              </div>
-              <p><strong>{footer.title}</strong></p>
-              <p>{footer.description}</p>
-              <div className="footer-date">
-                <p>{footer.date}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        {!isAtEnd && (
-          <button className="carousel-btn right-btn" onClick={scrollRight}>
-            &gt;
-          </button>
-        )}
-        </div>
-      <button className="footer-main-button">Selengkapnya</button>
-    </div>
       <div className="footer-bottom">
         <div className="footer-contact">
             <img src={LogoLogee} alt="LOGEE logo" />

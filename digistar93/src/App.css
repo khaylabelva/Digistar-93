@@ -996,6 +996,18 @@ body {
   padding: 0;
 }
 
+.clear-button {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.clear-button:hover {
+  opacity: 0.7;
+}
+
 .footer-bottom {
   display: flex;
   align-items: flex-start;
