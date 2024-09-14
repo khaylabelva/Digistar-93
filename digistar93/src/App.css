@@ -24,7 +24,6 @@ body {
   top: 45px;
   width: 100%;
   z-index: 1000;
-  font-family: 'Inter', sans-serif;
 }
 
 .logo {
@@ -137,6 +136,32 @@ body {
 
 .btn-language-option:hover {
   color: #FF6A00;
+}
+
+.nav-search {
+  margin-left: 130px;
+  position: relative;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border-radius: 15px;
+  border: 1px solid #FCFCFC;
+  background-color: transparent;
+  color: #FCFCFC;
+  font-size: 14px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #FCFCFC;
+  opacity: 0.6;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #FF6A00;
 }
 
 .nav-buttons .btn-daftar,

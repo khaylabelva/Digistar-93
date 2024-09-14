@@ -9,6 +9,7 @@ const Navbar = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('ID');
   const [showTicker, setShowTicker] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,12 @@ const Navbar = () => {
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     setShowLanguageOptions(false);
+  };
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      console.log('Searching for:', searchInput);
+    }
   };
 
   return (
@@ -98,6 +105,16 @@ const Navbar = () => {
             )}
           </li>
         </ul>
+        <div className="nav-search">
+          <input 
+            type="text" 
+            placeholder="Search..." 
+            className="search-input" 
+            value={searchInput} 
+            onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={handleSearch}
+          />
+        </div>
         <div className="nav-buttons">
           <button className="btn-daftar">Daftar</button>
           <button className="btn-masuk">Masuk</button>
