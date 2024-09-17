@@ -7,7 +7,6 @@ import Facebook from '../assets/Facebook.png';
 import LinkedIn from '../assets/LinkedIn.png';
 import EmailIcon from '../assets/EmailIcon.png';
 import PhoneIcon from '../assets/PhoneIcon.png';
-import AddressIcon from '../assets/AddressIcon.png';
 import X from '../assets/X.png';
 import ArrowIcon from '../assets/ArrowIcon.png';
 
@@ -165,6 +164,7 @@ const Footer = () => {
             <div className="footer-social-google">
             <a href="https://play.google.com/store/apps/developer?id=logee.id&pli=1"><img src={GooglePlay} alt="Google Play" /></a>
             </div>
+            <span className="divider">|</span>
             <a href="https://www.instagram.com/logee.id/"><img src={Instagram} alt="Instagram" /></a>
             <a href="https://www.linkedin.com/company/logee-indonesia/"><img src={LinkedIn} alt="LinkedIn" /></a>
             <a href="https://www.facebook.com/people/Logeeid/100084864591594/"><img src={Facebook} alt="Facebook" /></a>
@@ -195,14 +195,24 @@ const Footer = () => {
             </ul>
         </div>
         <div className="footer-contact">
-            <h3>Kontak</h3>
-            <p>Kantor Pusat</p>
-            <p>Gedung Telkom DBT, Jln. Prof. Dr. Soepomo no. 139, Jakarta Selatan, 12810 - Indonesia</p>
-            <p><img src={EmailIcon} alt="Email Icon" /><a href="mailto:info@logee.id">info@logee.id</a></p>
-            <p><img src={PhoneIcon} alt="Phone Icon" /><a href="tel:+628111255250">+62 811 1255 250</a></p>
-            <p>Direktorat Jenderal Perlindungan Konsumen dan Tertib Niaga Kementrian Perdagangan Republik Indonesia (Ditjen PPKTN)</p>
-            <p>Tel: +62 853 1111 11010</p>
+        <h3>Kontak</h3>
+        <p className="bold-text">Kantor Pusat</p>
+        <p>Gedung Telkom DBT, Jln. Prof. Dr. Soepomo no. 139, Jakarta Selatan, 12810 - Indonesia</p>
+        <p className="bold-text">Layanan Pengaduan Konsumen</p>
+        <div className="contact-item">
+          <img src={EmailIcon} alt="Email Icon" />
+          <a href="mailto:info@logee.id">info@logee.id</a>
         </div>
+        <div className="contact-item">
+          <img src={PhoneIcon} alt="Phone Icon" />
+          <a href="tel:+628111255250">+62 811 1255 250</a>
+        </div>
+        <p>Direktorat Jenderal Perlindungan Konsumen dan Tertib Niaga Kementrian Perdagangan Republik Indonesia (Ditjen PPKTN)</p>
+        <div className="contact-item">
+          <img src={PhoneIcon} alt="Phone Icon" />
+          <a href="tel:+62853111111010">+62 853 1111 11010</a>
+        </div>
+      </div>
     </div>
     <div className="footer-up">
         <a href="#"><img src={ArrowIcon} alt="Back to top" /></a>
