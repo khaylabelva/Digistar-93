@@ -1,11 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import LogeeTruck from '../assets/logee-truck.png'; 
 import LogeePort from '../assets/logee-port.png'; 
 import LogeeVisibility from '../assets/logee-visibility.png'; 
 
 const Services = () => {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="services-container">
+    <div className="services-container" ref={contentRef}>
       <h2 className="services-title">Maksimalkan Potensi Logistik dengan Teknologi LOGEE</h2>
       <p className="services-description">
         Logee hadir sebagai solusi logistik yang menawarkan efisiensi operasional melalui platform andal, layanan operasi menyeluruh, serta kolaborasi bisnis yang disesuaikan dengan kebutuhan Anda.

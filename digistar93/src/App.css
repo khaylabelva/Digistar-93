@@ -883,6 +883,15 @@ path {
   max-width: 40%;
   margin: 40px auto 5px auto;
   font-size: 2rem;
+  opacity: 0;
+  transform: scale(2, 0.5);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+}
+
+.services-container.visible .services-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .services-description {
@@ -890,6 +899,15 @@ path {
   margin: 5px auto 20px auto;
   text-align: center;
   max-width: 55%;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+}
+
+.services-container.visible .services-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .services-card {
@@ -899,6 +917,15 @@ path {
   width: 75%;
   margin: 20px auto;
   transition: box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(3in);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.services-container.visible .services-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .services-section {
@@ -1267,6 +1294,15 @@ path {
   max-width: 35%;
   margin: 50px auto 10px auto;
   font-size: 2rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+}
+
+.section-container.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .section-container p {
@@ -1274,6 +1310,15 @@ path {
   max-width: 49%;
   margin: 1px auto 15px auto;
   font-size: 15px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+}
+
+.section-container.visible p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
 }
 
 .map-container {
@@ -1297,12 +1342,21 @@ path {
 .stat-card {
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   text-align: center;
   min-width: 170px;
   height: 100px;
   margin-top: 20px;
+  opacity: 0;
+  transform: scaleY(0.5);
+  transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
+}
+
+.section-container.visible .stat-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.5s;
 }
 
 .stat-card h3 {
@@ -1315,11 +1369,48 @@ path {
   color: #666;
 }
 
+.card-map {
+  position: absolute;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: inline-block;
+}
+
+.leaflet-zoom-animated {
+  opacity: 0;
+  transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
+}
+
+.section-container.visible .leaflet-zoom-animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.stat-card-map {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  width: 100px;
+}
+
 /* Partners.css */
 .partners-container {
   text-align: center;
   padding: 150px 20px;
   color: #26272B;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.partners-container.visible {
+  opacity: 1;
 }
 
 .partners-container h2 {
@@ -1375,23 +1466,4 @@ path {
   background-color: transparent;
   color: #FF6A00;
   border: 1px solid #FF6A00;
-}
-.card-map {
-  position: absolute;
-  background-color: white;
-  color: black;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  display: inline-block;
-}
-
-.stat-card-map {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  text-align: center;
-  width: 100px;
 }

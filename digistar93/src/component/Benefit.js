@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../App.css';
 import card1 from '../assets/card1.png';
 import card2 from '../assets/card2.png';
@@ -7,6 +7,7 @@ import card4 from '../assets/card4.png';
 
 const Benefit = () => {
   const contentRef = useRef(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,6 +28,7 @@ const Benefit = () => {
       }
     };
   }, []);
+
   const benefits = [
     {
       title: 'Solusi Digital Terintegrasi',

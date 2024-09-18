@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ReactComponent as IndonesiaSVG } from '../assets/Indonesia.svg';
 import '../App.css';
 
@@ -12,6 +12,7 @@ const Growth = () => {
     totalOutlets: 0,
     totalDistributors: 0,
   });
+  const contentRef = useRef(null);
 
   // Function to fetch province data
   const fetchProvinceData = async (provinceName) => {
@@ -39,6 +40,27 @@ const Growth = () => {
       console.error('Error fetching total stats:', error);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     fetchTotalStats(); // Fetch total stats on component mount
@@ -75,7 +97,7 @@ const Growth = () => {
   };
 
   return (
-    <div className="section-container">
+    <div className="section-container" ref={contentRef}>
       <h2>Tumbuh Bersama LOGEE</h2>
       <p>
         Bergabung dengan LOGEE dan manfaatkan layanan serta kolaborasi bisnis yang dapat disesuaikan untuk memaksimalkan keuntungan Anda.

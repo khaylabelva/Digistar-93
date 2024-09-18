@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../App.css';
 import logo1 from '../assets/logo1.png';
 import logo2 from '../assets/logo2.png';
@@ -15,8 +15,31 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, lo
 const duplicatedLogos = [...logos, ...logos];
 
 const Partners = () => {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
     return (
-      <div className="partners-container">
+      <div className="partners-container" ref={contentRef}>
         <h2>Mitra LOGEE</h2>
         <div className="ticker-container">
           <div className="ticker">
