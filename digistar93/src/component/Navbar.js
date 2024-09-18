@@ -41,31 +41,31 @@ const Navbar = () => {
       <div className={`scrolling-ticker ${scrolled ? 'hidden' : ''}`}>
         <div className="ticker-wrapper">
           <div className="ticker-content">
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
           </div>
           <div className="ticker-content">
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> Gathering Transport Logee 16/07/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
-            <span> Webinar xxx dengan xxx pada xxx di xxx</span>
+            <span> INABUYER 19/06/2024 Jakarta</span>
             <img src={require('../assets/LogeeKecil.png')} alt="Separator" />
           </div>
         </div>
