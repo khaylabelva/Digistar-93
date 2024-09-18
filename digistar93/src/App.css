@@ -284,6 +284,10 @@ path {
 }
 
 /* Home.css */
+.chatbox {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -295,6 +299,17 @@ path {
   position: relative;
   background-color: #424242;
   overflow: hidden;
+}
+
+.home-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.home-content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home::before {
@@ -349,8 +364,8 @@ path {
   align-items: center;
   gap: 0.5rem;
   position: absolute;
-  bottom: 8rem;
-  right: 8rem;
+  top: 20rem;
+  right: 7rem;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border-top-right-radius: 0;
@@ -490,21 +505,30 @@ path {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  text-align: center;
+  min-height: 100vh;
+  text-align: left;
   padding: 2rem 3rem;
   padding-left: 13rem;
   color: white;
   position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.review-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .review-section h2 {
   font-size: 2rem;
   max-width: 270px;
   margin-bottom: 1rem;
-  margin-left: 0;
   font-weight: bold;
-  text-align: left;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
 }
 
 .review-section p {
@@ -513,7 +537,9 @@ path {
   color: white;
   text-align: justify;
   max-width: 900px;
-  margin-left: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
 }
 
 .carousel-container {
@@ -521,6 +547,9 @@ path {
   align-items: center;
   position: relative;
   max-width: 920px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
 }
 
 .review-carousel {
@@ -626,6 +655,24 @@ path {
 .carousel-btn:hover {
   background-color: #D3D3D3;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+.review-section.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.review-section.visible p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.review-section.visible .carousel-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
 }
 
 /* Benefit.css */

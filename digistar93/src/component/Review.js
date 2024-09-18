@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import KAILogistik from '../assets/KAILogistik.png';
 import KJM from '../assets/KJM.png';
 import Koja from '../assets/Koja.png';
@@ -56,6 +56,7 @@ const Review = () => {
   const carouselRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +74,27 @@ const Review = () => {
     handleScroll();
 
     return () => carousel.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
   }, []);
 
   const scrollLeft = () => {
@@ -98,7 +120,7 @@ const Review = () => {
     };
 
     return (
-      <div className="review-section">
+      <div className="review-section" ref={contentRef}>
         <h2>Cerita Sukses dari Mitra LOGEE</h2>
         <p>LOGEE telah menjadi bagian dari aktor logistik yang tumbuh dan berkembang dalam satu ekosistem. Kembangkan bisnis dan usaha logistik Anda bersama ribuan armada dan mitra outlet ekosistem LOGEE. Dapatkan inspirasi dari testimoni mitra kami.</p>
         <div className="carousel-container">
@@ -129,4 +151,4 @@ const Review = () => {
     );
   };
   
-  export default Review;
+export default Review;
