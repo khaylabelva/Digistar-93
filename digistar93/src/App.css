@@ -724,7 +724,7 @@ path {
   transition: opacity 2s ease-out, transform 2s ease-out;
 }
 
-.benefit-cards.visible .card-two {
+.benefit-cards.visible .card-one {
   opacity: 1;
 }
 
