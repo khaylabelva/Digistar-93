@@ -301,17 +301,6 @@ path {
   overflow: hidden;
 }
 
-.home-content {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 2s ease-out, transform 2s ease-out;
-}
-
-.home-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .home::before {
   content: "";
   position: absolute;
@@ -340,6 +329,15 @@ path {
   font-weight: 800;
   text-align: left;
   margin-left: 10rem;
+  opacity: 0;
+  transform: translateX(2em);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.home-content.visible h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .home p {
@@ -350,6 +348,15 @@ path {
   line-height: 1.5;
   text-align: left;
   margin-left: 10rem;
+  opacity: 0;
+  transform: translateX(2em);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.home-content.visible p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
 }
 
 .btn-butuh-bantuan {
@@ -364,7 +371,7 @@ path {
   align-items: center;
   gap: 0.5rem;
   position: absolute;
-  top: 20rem;
+  bottom: 6rem;
   right: 7rem;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
@@ -995,6 +1002,15 @@ path {
   font-size: 2rem;
   margin-left: -20px;
   color: #26272B;
+  opacity: 0;
+  transform: translateX(2em);
+  transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+}
+
+.footer-top.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .footer-top p {
@@ -1002,11 +1018,23 @@ path {
   margin-bottom: 20px;
   margin-left: -20px;
   color: #26272B;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.footer-top.visible p {
+  opacity: 1;
 }
 
 .footer-buttons {
   margin-bottom: 30px;
   margin-left: -30px;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.footer-top.visible .footer-buttons {
+  opacity: 1;
 }
 
 .footer-button {
@@ -1096,7 +1124,7 @@ path {
   font-size: 15px;
   cursor: pointer;
   display: block;
-  margin: 30px auto -50px;
+  margin: 30px auto 10px;
   transition: background-color 0.2s ease;
 }
 

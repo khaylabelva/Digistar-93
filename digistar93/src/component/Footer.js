@@ -49,6 +49,28 @@ const Footer = () => {
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const [filteredCards, setFilteredCards] = useState(cards);
+  const contentRef = useRef(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,7 +126,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-top">
+      <div className="footer-top" ref={contentRef}>
         <h2>Artikel LOGEE</h2>
         <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
         <div className="footer-buttons">
