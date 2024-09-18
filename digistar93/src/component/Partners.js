@@ -14,7 +14,7 @@ import logo10 from '../assets/logo10.png';
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10];
 const duplicatedLogos = [...logos, ...logos];
 
-const Partners = () => {
+const Partners = ({ id }) => {
   const contentRef = useRef(null);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Partners = () => {
   }, []);
 
     return (
-      <div className="partners-container" ref={contentRef}>
+      <section id={id} className="partners-container" ref={contentRef}>
         <h2>Mitra LOGEE</h2>
         <div className="ticker-container">
           <div className="ticker">
@@ -56,7 +56,7 @@ const Partners = () => {
           </div>
         </div>
         <button className="contact-button">Hubungi Kami</button>
-      </div>
+      </section>
     );
   };
   

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import QuestionMark from '../assets/QuestionMark.png';
 import '../App.css';
 
-const Home = () => {
+const Home = ({ id }) => {
   const [showChat, setShowChat] = useState(false);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -45,7 +45,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="home">
+    <section id={id} className="home">
       <div className="home-content" ref={contentRef}>
         <h1>Solusi Digital Bisnis Logistik</h1>
         <p>

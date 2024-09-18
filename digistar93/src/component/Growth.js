@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ReactComponent as IndonesiaSVG } from '../assets/Indonesia.svg';
 import '../App.css';
 
-const Growth = () => {
+const Growth = ({ id }) => {
   const [hoveredProvince, setHoveredProvince] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [provinceData, setProvinceData] = useState(null);
@@ -97,7 +97,7 @@ const Growth = () => {
   };
 
   return (
-    <div className="section-container" ref={contentRef}>
+    <section id={id} className="section-container" ref={contentRef}>
       <h2>Tumbuh Bersama LOGEE</h2>
       <p>
         Bergabung dengan LOGEE dan manfaatkan layanan serta kolaborasi bisnis yang dapat disesuaikan untuk memaksimalkan keuntungan Anda.
@@ -165,7 +165,7 @@ const Growth = () => {
           <p>Distributor</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

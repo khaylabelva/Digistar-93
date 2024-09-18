@@ -52,7 +52,7 @@ const reviews = [
   },
 ];
 
-const Review = () => {
+const Review = ({ id }) => {
   const carouselRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
@@ -120,7 +120,7 @@ const Review = () => {
     };
 
     return (
-      <div className="review-section" ref={contentRef}>
+      <section id={id} className="review-section" ref={contentRef}>
         <h2>Cerita Sukses dari Mitra LOGEE</h2>
         <p>LOGEE telah menjadi bagian dari aktor logistik yang tumbuh dan berkembang dalam satu ekosistem. Kembangkan bisnis dan usaha logistik Anda bersama ribuan armada dan mitra outlet ekosistem LOGEE. Dapatkan inspirasi dari testimoni mitra kami.</p>
         <div className="carousel-container">
@@ -147,7 +147,7 @@ const Review = () => {
             </button>
           )}
         </div>
-      </div>
+      </section>
     );
   };
   

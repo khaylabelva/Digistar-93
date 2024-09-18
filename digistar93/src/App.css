@@ -18,6 +18,7 @@ path {
 
 /* Navbar.css */
 .navbar {
+  font-family: 'Satoshi', sans-serif;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -144,6 +145,7 @@ path {
 .nav-search {
   margin-left: 130px;
   position: relative;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .search-input {
@@ -155,6 +157,7 @@ path {
   font-size: 14px;
   width: 200px;
   transition: all 0.3s ease;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .search-input::placeholder {
@@ -284,10 +287,6 @@ path {
 }
 
 /* Home.css */
-.chatbox {
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
 .home {
   display: flex;
   flex-direction: column;
@@ -299,6 +298,7 @@ path {
   position: relative;
   background-color: #424242;
   overflow: hidden;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .home::before {
@@ -513,6 +513,7 @@ path {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  font-family: 'Satoshi', sans-serif;
   text-align: left;
   padding: 2rem 3rem;
   padding-left: 13rem;
@@ -691,6 +692,7 @@ path {
   color: white;
   position: relative;
   overflow: hidden;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .benefit-container h2 {
@@ -883,6 +885,7 @@ path {
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .services-title {
@@ -996,6 +999,7 @@ path {
   text-align: left;
   padding: 100px 11rem;
   margin-top: -100px;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .footer-top h2 {
@@ -1172,6 +1176,7 @@ path {
   align-items: flex-start;
   gap: 20px;
   position: relative;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .footer-logo-section {
@@ -1315,6 +1320,7 @@ path {
   padding: 1rem 3rem;
   color: #26272B;
   position: relative;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .section-container h2 {
@@ -1435,6 +1441,7 @@ path {
   color: #26272B;
   opacity: 0;
   transition: opacity 2s ease-out, transform 2s ease-out;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .partners-container.visible {

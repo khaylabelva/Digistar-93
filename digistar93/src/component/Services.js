@@ -3,7 +3,7 @@ import LogeeTruck from '../assets/logee-truck.png';
 import LogeePort from '../assets/logee-port.png'; 
 import LogeeVisibility from '../assets/logee-visibility.png'; 
 
-const Services = () => {
+const Services = ({ id }) => {
   const contentRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="services-container" ref={contentRef}>
+    <section id={id} className="services-container" ref={contentRef}>
       <h2 className="services-title">Maksimalkan Potensi Logistik dengan Teknologi LOGEE</h2>
       <p className="services-description">
         Logee hadir sebagai solusi logistik yang menawarkan efisiensi operasional melalui platform andal, layanan operasi menyeluruh, serta kolaborasi bisnis yang disesuaikan dengan kebutuhan Anda.
@@ -53,7 +53,7 @@ const Services = () => {
         <img src={LogeeVisibility} alt="Logee Visibility" className="service-image"/>
       </div>
       </div>
-    </div>
+    </section>
   );
 };
 

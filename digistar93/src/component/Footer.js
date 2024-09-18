@@ -10,7 +10,7 @@ import PhoneIcon from '../assets/PhoneIcon.png';
 import X from '../assets/X.png';
 import ArrowIcon from '../assets/ArrowIcon.png';
 
-const Footer = () => {
+const Footer = ({ id }) => {
   const [activeCategory, setActiveCategory] = useState(null);
   const cards = [
     {
@@ -125,7 +125,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <section id={id} className="footer">
       <div className="footer-top" ref={contentRef}>
         <h2>Artikel LOGEE</h2>
         <p>Baca berita logistik terkini, tips, dan informasi seputar LOGEE.</p>
@@ -200,7 +200,7 @@ const Footer = () => {
             <h3>Tautan</h3>
             <ul>
                 <li><a href="#">Leap</a></li>
-                <li><a href="#">Artikel</a></li>
+                <li><a href="Footer">Artikel</a></li>
                 <li><a href="#">Hubungi Kami</a></li>
                 <li><a href="#">Karier</a></li>
                 <li><a href="#">Syarat & Ketentuan</a></li>
@@ -211,9 +211,9 @@ const Footer = () => {
         <div className="footer-solutions">
             <h3>Solusi</h3>
             <ul>
-                <li><a href="#">Transportasi</a></li>
-                <li><a href="#">Distribusi</a></li>
-                <li><a href="#">Visibility</a></li>
+                <li><a href="Services">Transportasi</a></li>
+                <li><a href="Services">Distribusi</a></li>
+                <li><a href="Services">Visibility</a></li>
             </ul>
         </div>
         <div className="footer-contact">
@@ -240,7 +240,7 @@ const Footer = () => {
         <a href="#"><img src={ArrowIcon} alt="Back to top" /></a>
     </div>
 </div>
-    </footer>
+    </section>
   );
 };
 

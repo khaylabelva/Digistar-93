@@ -5,9 +5,9 @@ import card2 from '../assets/card2.png';
 import card3 from '../assets/card3.png';
 import card4 from '../assets/card4.png';
 
-const Benefit = () => {
+const Benefit = ({ id }) => {
   const contentRef = useRef(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -53,7 +53,7 @@ const Benefit = () => {
   ];
 
   return (
-    <div className="benefit-container">
+    <section id={id} className="benefit-container">
       <h2>Bisnis Lebih Produktif Bersama LOGEE</h2>
       <p>
         LOGEE adalah platform digital logistik yang memiliki keunggulan untuk memajukan bisnis Anda dengan berdasarkan pada empat nilai berikut.
@@ -66,7 +66,7 @@ const Benefit = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );  
 };
 
