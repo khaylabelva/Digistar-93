@@ -720,6 +720,12 @@ path {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.benefit-cards.visible .card-two {
+  opacity: 1;
 }
 
 .card-one h3 {
@@ -753,6 +759,12 @@ path {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.benefit-cards.visible .card-two {
+  opacity: 1;
 }
 
 .card-two h3 {
@@ -788,6 +800,12 @@ path {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.benefit-cards.visible .card-three {
+  opacity: 1;
 }
 
 .card-three h3 {
@@ -823,6 +841,12 @@ path {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.benefit-cards.visible .card-four {
+  opacity: 1;
 }
 
 .card-four h3 {

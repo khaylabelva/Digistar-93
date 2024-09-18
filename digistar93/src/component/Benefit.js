@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
 import card1 from '../assets/card1.png';
 import card2 from '../assets/card2.png';
@@ -6,6 +6,27 @@ import card3 from '../assets/card3.png';
 import card4 from '../assets/card4.png';
 
 const Benefit = () => {
+  const contentRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          contentRef.current.classList.add('visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
   const benefits = [
     {
       title: 'Solusi Digital Terintegrasi',
@@ -35,7 +56,7 @@ const Benefit = () => {
       <p>
         LOGEE adalah platform digital logistik yang memiliki keunggulan untuk memajukan bisnis Anda dengan berdasarkan pada empat nilai berikut.
       </p>
-      <div className="benefit-cards">
+      <div className="benefit-cards" ref={contentRef}>
         {benefits.map((benefit, index) => (
           <div className={`benefit-card ${benefit.className}`} key={index}>
             <h3>{benefit.title}</h3>
