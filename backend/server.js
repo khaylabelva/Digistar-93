@@ -1,7 +1,10 @@
 require('dotenv').config();
 const mongodb = require('./src/database/dbConfig');
-const provinceController = require('./src/controllers/query'); // Adjust path if needed
-const { getTotalStats } = require('./src/controllers/query'); // Named import
+const searchController = require('./src/controllers/searchController');
+const provinceController = require('./src/controllers/query');
+const contentController = require('./src/controllers/contentController'); // Import the new controller
+const { getTotalStats } = require('./src/controllers/query');
+
 const cors = require('cors');
 
 // Connect to the database
@@ -47,3 +50,19 @@ app.get('/api/total-stats', async (req, res) => {
     res.status(500).json({ message: 'Error fetching total stats' });
   }
 });
+
+// Search content
+app.get('/api/search', searchController.searchContent);
+
+// Get all content
+app.get('/api/content', async (req, res) => {
+  try {
+    const content = await provinceController.getContent();
+    res.json(content);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching content' });
+  }
+});
+
+// Add new content
+app.post('/api/content', contentController.addContent);
