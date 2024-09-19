@@ -15,16 +15,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 // Get specific province by name
 app.get('/api/provinces/:name', async (req, res) => {
@@ -66,3 +60,5 @@ app.get('/api/content', async (req, res) => {
 
 // Add new content
 app.post('/api/content', contentController.addContent);
+
+module.exports = app;
