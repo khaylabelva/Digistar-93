@@ -3,13 +3,25 @@ import '../App.css';
 import LogoLogee from '../assets/LogoLogee.png';
 import ArrowDown from '../assets/ArrowDown.png';
 import ArrowUp from '../assets/ArrowUp.png';
+import SearchCard from './SearchCard';
+import { useSearch } from '../services/Search';
 
 const Navbar = () => {
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('ID');
   const [showTicker, setShowTicker] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-  const [searchInput, setSearchInput] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const { results, loading } = useSearch(searchTerm);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+  const handleClearSearch = () => {
+    setSearchTerm('');
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,12 +39,6 @@ const Navbar = () => {
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     setShowLanguageOptions(false);
-  };
-
-  const handleSearch = (e) => {
-    if (e.key === 'Enter') {
-      console.log('Searching for:', searchInput);
-    }
   };
 
   return (
@@ -106,22 +112,34 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="nav-search">
-          <input 
-            type="text" 
-            placeholder="Search..." 
-            className="search-input" 
-            value={searchInput} 
-            onChange={(e) => setSearchInput(e.target.value)}
-            onKeyDown={handleSearch}
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search-input"
+            value={searchTerm}
+            onChange={handleSearch}
           />
+          {searchTerm && (
+          <button onClick={handleClearSearch} className="clear-button">x</button>
+        )}
         </div>
         <div className="nav-buttons">
           <button className="btn-daftar">Daftar</button>
           <button className="btn-masuk">Masuk</button>
         </div>
       </nav>
+      <div className={`search-results ${searchTerm || results.length > 0 ? 'active' : ''}`}>
+        {loading && <div>Loading...</div>}
+        {!loading && searchTerm && results.length === 0 && <p>No results found</p>}
+        {results.map((result, index) => (
+          <SearchCard
+            key={index}
+            result={result}
+          />
+        ))}
+      </div>
     </>
-  );  
+  );
 };
 
 export default Navbar;

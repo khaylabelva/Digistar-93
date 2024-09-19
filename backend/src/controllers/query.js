@@ -1,4 +1,6 @@
+const { get } = require('mongoose');
 const Province = require('../models/province');
+const Content = require('../models/searchData')
 
 // query all provinces
 async function getProvinces() {
@@ -6,7 +8,7 @@ async function getProvinces() {
     return await Province.find();
   } catch (error) {
     console.error('Error fetching provinces:', error);
-    throw error; // Rethrow or handle the error as needed
+    throw error;
   }
 }
 
@@ -52,8 +54,19 @@ async function getTotalStats() {
   }
 }
 
+// query all content (testing)
+async function getContent() {
+  try {
+    return await Content.find();
+  } catch (error) {
+    console.error('Error fetching content:', error);
+    throw error;
+  }
+}
+
 module.exports = {
   getProvinces,
   getProvinceByName,
-  getTotalStats
+  getTotalStats,
+  getContent
 };
