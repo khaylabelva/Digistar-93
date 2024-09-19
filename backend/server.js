@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cors());
 
 // Get specific province by name
-app.get('/api/provinces/:name', async (req, res) => {
+app.get('https://logee-server.vercel.app/api/provinces/:name', async (req, res) => {
   try {
     const province = await provinceController.getProvinceByName(req.params.name);
     if (province) {
@@ -36,7 +36,7 @@ app.get('/api/provinces/:name', async (req, res) => {
 });
 
 // Get total stats for all provinces
-app.get('/api/total-stats', async (req, res) => {
+app.get('https://logee-server.vercel.app/api/total-stats', async (req, res) => {
   try {
     const totals = await getTotalStats();
     res.json(totals);
@@ -46,10 +46,10 @@ app.get('/api/total-stats', async (req, res) => {
 });
 
 // Search content
-app.get('/api/search', searchController.searchContent);
+app.get('https://logee-server.vercel.app/api/search', searchController.searchContent);
 
 // Get all content
-app.get('/api/content', async (req, res) => {
+app.get('https://logee-server.vercel.app/api/content', async (req, res) => {
   try {
     const content = await provinceController.getContent();
     res.json(content);
@@ -59,6 +59,6 @@ app.get('/api/content', async (req, res) => {
 });
 
 // Add new content
-app.post('/api/content', contentController.addContent);
+app.post('https://logee-server.vercel.app/api/content', contentController.addContent);
 
 module.exports = app;

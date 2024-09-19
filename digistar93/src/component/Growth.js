@@ -17,7 +17,7 @@ const Growth = ({ id }) => {
   // Function to fetch province data
   const fetchProvinceData = async (provinceName) => {
     try {
-      const response = await fetch(`/api/provinces/${provinceName}`);
+      const response = await fetch(`https://logee-server.vercel.app/api/provinces/${provinceName}`);
       const text = await response.text();
       const contentType = response.headers.get('Content-Type');
       if (!contentType || !contentType.includes('application/json')) {
@@ -33,7 +33,7 @@ const Growth = ({ id }) => {
   // Fetch total stats for trucker, fleet, outlet, distributor
   const fetchTotalStats = async () => {
     try {
-      const response = await fetch('/api/total-stats');
+      const response = await fetch('https://logee-server.vercel.app/api/total-stats');
       const data = await response.json();
       setTotalStats(data); // Adjust this to match the structure of your response
     } catch (error) {

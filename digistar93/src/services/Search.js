@@ -12,7 +12,7 @@ export const useSearch = (query) => {
       }
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/search?query=${query}`);
+        const response = await fetch(`https://logee-server.vercel.app/api/search?query=${query}`);
         const data = await response.json();
         setResults(data);
       } catch (error) {
