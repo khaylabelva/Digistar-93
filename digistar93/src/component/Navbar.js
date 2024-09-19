@@ -130,13 +130,17 @@ const Navbar = () => {
       </nav>
       <div className={`search-results ${searchTerm || results.length > 0 ? 'active' : ''}`}>
         {loading && <div>Loading...</div>}
-        {!loading && searchTerm && results.length === 0 && <p>No results found</p>}
-        {results.map((result, index) => (
-          <SearchCard
-            key={index}
-            result={result}
-          />
-        ))}
+        {Array.isArray(results) && results.length > 0 ? (
+          results.map((result, index) => (
+            <SearchCard
+              key={index}
+              result={result}
+            />
+          ))
+        ) : (
+          !loading && searchTerm && <p>No results found</p>
+        )}
+
       </div>
     </>
   );
