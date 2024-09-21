@@ -121,7 +121,7 @@ const Review = ({ id }) => {
 
     return (
       <section id={id} className="review-section" ref={contentRef}>
-        <h2>Cerita Sukses dari Mitra LOGEE</h2>
+        <h2>Cerita Sukses <br/>dari Mitra LOGEE</h2>
         <p>LOGEE telah menjadi bagian dari aktor logistik yang tumbuh dan berkembang dalam satu ekosistem. Kembangkan bisnis dan usaha logistik Anda bersama ribuan armada dan mitra outlet ekosistem LOGEE. Dapatkan inspirasi dari testimoni mitra kami.</p>
         <div className="carousel-container">
           {!isAtStart && (

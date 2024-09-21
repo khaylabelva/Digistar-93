@@ -250,7 +250,7 @@ path {
 .ticker-wrapper {
   display: flex;
   width: 200%;
-  animation: ticker 25s linear infinite;
+  animation: ticker 30s linear infinite;
 }
 
 .ticker-content {
@@ -512,11 +512,11 @@ path {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   font-family: 'Satoshi', sans-serif;
-  text-align: left;
   padding: 2rem 3rem;
-  padding-left: 13rem;
+  padding-left: 0;
   color: white;
   position: relative;
   opacity: 0;
@@ -529,14 +529,19 @@ path {
   transform: translateY(0);
 }
 
+.review-section h2, .review-section p {
+  max-width: 900px;
+  width: 100%;
+}
+
 .review-section h2 {
   font-size: 2rem;
-  max-width: 270px;
   margin-bottom: 1rem;
   font-weight: bold;
   opacity: 0;
   transform: translateX(-20px);
   transition: opacity 1s ease-out 0s, transform 1s ease-out 0s;
+  text-align: left;
 }
 
 .review-section p {
@@ -544,15 +549,17 @@ path {
   margin-bottom: 20px;
   color: white;
   text-align: justify;
-  max-width: 900px;
   opacity: 0;
   transform: translateX(-20px);
   transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+  text-align: left;
 }
+
 
 .carousel-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   max-width: 920px;
   opacity: 0;
@@ -562,13 +569,17 @@ path {
 
 .review-carousel {
   display: flex;
+  align-items: center;
   overflow-x: hidden;
   scroll-snap-type: none;
   max-width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
+  margin: 0 auto;
 }
+
+
 
 .review-card {
   background-color: #fff;
