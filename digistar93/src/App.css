@@ -143,9 +143,10 @@ path {
 }
 
 .nav-search {
-  margin-left: 130px;
   position: relative;
   font-family: 'Satoshi', sans-serif;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .search-input {
